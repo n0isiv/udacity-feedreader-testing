@@ -62,20 +62,19 @@ $(
         expect($("body").hasClass("menu-hidden")).toBe(true);
       });
 
-      /* TODO: Write a test that ensures the menu changes
-       * visibility when the menu icon is clicked. This test
-       * should have two expectations: does the menu display when
-       * clicked and does it hide when clicked again.
-       */
-
       /**
        * Test that the menu is open after the user clicked on the menu icon.
        */
       it("is opened after click on the menu icon", function() {
         // simulate menu icon click
         $(".menu-icon-link").click();
-
+        // check if menu is open
         expect($("body").hasClass("menu-hidden")).not.toBe(true);
+
+        // simulate menu icon click
+        $(".menu-icon-link").click();
+        // check if menu is closed
+        expect($("body").hasClass("menu-hidden")).toBe(true);
       });
     });
 
